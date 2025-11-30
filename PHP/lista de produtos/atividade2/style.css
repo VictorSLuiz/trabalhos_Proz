@@ -1,0 +1,110 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Fundo suave */
+    color: #333;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Estilo da Caixa Principal (Formulário e Container de Dados) */
+form, .container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra um pouco mais forte */
+    width: 100%;
+    max-width: 450px; /* Aumentei um pouco a largura máxima para melhor visualização */
+    margin: auto;
+}
+
+/* Títulos (Usados em ambas as páginas) */
+h3 {
+    color: #007bff;
+    border-bottom: 2px solid #e9ecef; /* Linha sutil para separar o título */
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 25px; /* Mais espaço após o título */
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Estilo para Rótulos (Labels) */
+label {
+    display: block;
+    margin-bottom: 8px; /* Mais espaço para o rótulo */
+    font-weight: 600; /* Mais negrito */
+    color: #495057;
+    font-size: 0.95em;
+}
+
+/* Estilo para Campos de Input */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px; /* Mais espaço após o campo */
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff; /* Destaca a borda ao focar */
+    outline: none;
+}
+
+/* Estilo para o Botão de Envio (Submit) */
+input[type="submit"] {
+    width: 100%; /* Botão com largura total para maior destaque */
+    background-color: #28a745; /* Cor verde para ação primária */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+
+/* Estilos para a Saída de Dados (Página 2) */
+
+.container p {
+    margin: 10px 0; /* Espaçamento consistente entre os dados */
+    font-size: 1.1em;
+    padding: 5px 0;
+    border-bottom: 1px dotted #eee; /* Linha pontilhada para separar cada item */
+}
+
+/* Remove a linha pontilhada do último item */
+.container p:last-of-type {
+    border-bottom: none;
+}
+
+.container strong {
+    color: #343a40;
+}
+
+/* Estilo para destaque de status (Aprovado/Reprovado) */
+.aprovado {
+    font-weight: bold;
+    color: #28a745; 
+}
+
+.reprovado {
+    font-weight: bold;
+    color: #dc3545; 
+}
