@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <style>
+        /* Configuração básica da página para centralizar tudo */
+body {
+    background-color: #f0f8ff; /* Fundo azul bem clarinho */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* O container principal */
+.container {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 500px; /* Limita a largura para parecer um app */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Garante que os itens fiquem um embaixo do outro */
+}
+
+/* Título */
+.container h2 {
+    color: #00796b; /* Verde escuro (Enfermagem) */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+/* Input de texto */
+#campoMensagem {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #b2dfdb;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+#campoMensagem:focus {
+    border-color: #00796b;
+}
+
+/* Estilização Geral dos Botões */
+button {
+    padding: 10px 15px;
+    margin-right: 5px; /* Espaço entre os botões */
+    margin-bottom: 10px; /* Espaço caso quebrem de linha */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Cores Específicas para cada botão (usando o seletor de atributo onclick) */
+/* Botão Enviar - Azul/Verde destaque */
+button[onclick="enviarMensagem()"] {
+    background-color: #00796b;
+    flex-grow: 1; /* Tenta ocupar espaço se possível */
+}
+
+/* Botão Limpar - Vermelho suave */
+button[onclick="limparchat()"] {
+    background-color: #e57373;
+}
+
+/* Botões de Fonte - Cinza/Neutro */
+button[onclick^="aumentar"], 
+button[onclick^="diminuir"] {
+    background-color: #78909c;
+    width: 40px; /* Deixa eles quadradinhos */
+}
+
+/* Área do Chat */
+#chat {
+    margin-top: 15px;
+    border: 1px solid #e0e0e0;
+    background-color: #fafafa;
+    height: 300px; /* Altura fixa para a área de conversa */
+    border-radius: 8px;
+    padding: 15px;
+    overflow-y: auto; /* Adiciona rolagem se tiver muito texto */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilos extras para as mensagens (caso seu JS adicione classes p, div ou span) */
+#chat div, #chat p {
+    padding: 8px 12px;
+    background-color: #e0f2f1;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    border-left: 4px solid #00796b;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>ChatBot de Enfermagem</h2>
+
+        <input id="campoMensagem" placeholder="Digite sua mensagem aqui">
+
+        
+        <div id="chat"></div>
+        <button onclick="enviarMensagem()">Enviar</button>
+        <button onclick="limparChat()">Limpar Chat</button>
+        <button onclick="aumentarFonte()">A+</button> 
+        <button onclick="diminuirFonte()">A-</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
